@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --color-parchment: #E8D8BE;
+  --color-cream: #F3E8D0;
+  --color-wine: #5A1722;
+  --color-dark-wine: #3B0D16;
+  --color-espresso: #3A2922;
+  --color-antique-gold: #A8895B;
+  --color-soft-beige: #D2BFA3;
+
+  --bg-parchment: #E8D8BE;
+  --bg-cream: #F3E8D0;
+  --text-espresso: #3A2922;
+  --text-wine: #5A1722;
+  --accent-gold: #A8895B;
+
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-baskerville: 'Libre Baskerville', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+/* Base Body Styles */
+html,
+body {
+  background-color: #2F241F;
+  color: var(--text-espresso);
+  font-family: var(--font-baskerville), Georgia, serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Helpers */
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.font-baskerville {
+  font-family: var(--font-baskerville);
+}
+
+/* Subtle aged paper grain background texture */
+.paper-texture {
+  background-color: var(--color-cream);
+  background-image: radial-gradient(rgba(58, 41, 34, 0.04) 1px, transparent 0),
+    radial-gradient(rgba(168, 137, 91, 0.04) 1px, transparent 0);
+  background-size: 24px 24px, 16px 16px;
+  background-position: 0 0, 8px 8px;
+}
+
+.envelope-texture {
+  background-color: var(--color-parchment);
+  background-image: radial-gradient(rgba(58, 41, 34, 0.06) 1px, transparent 0),
+    radial-gradient(rgba(90, 23, 34, 0.03) 1px, transparent 0);
+  background-size: 20px 20px, 12px 12px;
+  background-position: 0 0, 6px 6px;
+}
+
+/* Antique Double Border */
+.vintage-border {
+  border: 1px solid rgba(168, 137, 91, 0.5);
+  outline: 1px solid rgba(168, 137, 91, 0.25);
+  outline-offset: -5px;
+}
+
+.vintage-border-wine {
+  border: 1px solid rgba(90, 23, 34, 0.35);
+  outline: 1px solid rgba(90, 23, 34, 0.18);
+  outline-offset: -4px;
+}
+
+/* Aged Deckled Edge / Card Shadow */
+.vintage-card-shadow {
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(47, 36, 31, 0.18),
+    0 16px 48px rgba(37, 26, 21, 0.22),
+    inset 0 0 40px rgba(168, 137, 91, 0.06);
+}
+
+.envelope-shadow {
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.15),
+    0 20px 45px -5px rgba(25, 15, 10, 0.4),
+    inset 0 0 60px rgba(90, 23, 34, 0.06);
+}
+
+/* Antique Postage Stamp Serrated Edge */
+.stamp-edge {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* Smooth Envelope Transitions */
+@keyframes waxFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+.animate-wax-float {
+  animation: waxFloat 4s ease-in-out infinite;
+}
+
+/* Subtle Shimmer for Gold Accents */
+@keyframes antiqueShimmer {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.shimmer-gold {
+  animation: antiqueShimmer 3s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Custom Scrollbar for Vintage Feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #271E1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A8895B;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5A1722;
+}
+
+/* Mobile Touch Optimization */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
